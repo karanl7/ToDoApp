@@ -39,15 +39,21 @@ export default function TodoList() {
   };
 
   return (
-    <div className="bg-blue-100">
+    <div>
       <input
-        placeholder="add a task"
+        placeholder=" Add a task"
         value={newTodo}
         onChange={updateTodoValue}
+        className="border-2 p-1 border-black rounded-lg"
       ></input>
       <br></br>
       <br></br>
-      <button onClick={addNewtask}>Add a Task</button>
+      <button
+        onClick={addNewtask}
+        className="border rounded-md text-black bg-blue-500 p-1"
+      >
+        Add a Task
+      </button>
       <br></br>
       <br></br>
 
@@ -62,9 +68,19 @@ export default function TodoList() {
               {todo.task}
             </span>
             &nbsp;&nbsp;&nbsp;
-            <button onClick={() => deleteTodo(todo.id)}>delete</button>{" "}
+            <button
+              onClick={() => deleteTodo(todo.id)}
+              className="border rounded-md text-black bg-blue-500 p-1"
+            >
+              delete
+            </button>{" "}
             <span></span>
-            <button onClick={() => markAsDone(todo.id)}>Mark As Done</button>
+            <button
+              onClick={() => markAsDone(todo.id)}
+              className="border-2 rounded-md text-black bg-blue-500 p-1"
+            >
+              Mark As Done
+            </button>
           </li>
         ))}
       </ul>
